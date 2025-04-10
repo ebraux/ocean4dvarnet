@@ -19,6 +19,7 @@ mamba create --name "ocean-code" python=3.12 -y
 mamba install pip
 ```
 
+
 - Activer l'environnement
 ``` bash
 mamba activate ocean-code

@@ -18,8 +18,8 @@ jobs:
 
       - name: Install doc dependecies 
         run: |
-          echo "Installing dev dependencies"
-          pip install -e .[dev]
+          echo "Installing doc dependencies"
+          pip install -e .[doc]
 
       - name: Deploy MkDocs to GitHub Pages
         #if: needs.check-contribs.outputs.deploy == 'true'

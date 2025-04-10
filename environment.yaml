@@ -1,0 +1,16 @@
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - nodefaults
+dependencies:
+  - pip
+  - pytorch::pytorch
+  - pytorch::pytorch-cuda
+dependencies:
+  - pip
+  - pytorch::pytorch
+  - pytorch::pytorch-cuda
+  - pytorch-lightning
+  - pyinterp
+  - tqdm

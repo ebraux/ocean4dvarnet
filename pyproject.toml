@@ -21,6 +21,11 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
 dependencies = [
   "xarray==2025.1.2",
   "netcdf4 (>=1.7.2,<2.0.0)",
@@ -30,13 +35,46 @@ dependencies = [
 ]  
 
 # conda dependencies
-#  - pytorch::pytorch=2.4.1
+#   - pytorch::pytorch=2.4.1
 #   - pytorch::pytorch-cuda=11.8
 
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+# Optional dependencies
+[project.optional-dependencies]
+dev = [
+    "pylint",
+    "pytest",
+    "pytest-cov",
+    "tox",
+    "tomli",
+    "flake8",
+    "black",
+    "isort",
+]
+doc = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+]
 
 [tool.pylint.format]
 max-line-length = 120
+
+[tool.flake8]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = "tests"
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+

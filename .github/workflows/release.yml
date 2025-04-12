@@ -1,0 +1,74 @@
+name: Release Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Where to publish (pypi / testpypi)
+        required: true
+        default: pypi
+        type: choice
+        options:
+          - pypi
+          - testpypi
+
+  push:
+    tags:
+      - 'v*'  # Only run on version tags like v0.3.1
+
+jobs:
+  release:
+    name: Publish Python Package
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - name: Setup GitHub CLI
+        uses: cli/gh-action@v2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Extract version
+        id: get_version
+        uses: ./.github/actions/extract-version
+
+      - name: Build package
+        uses: ./.github/actions/build-package
+
+      - name: Check tag version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          if [ "$TAG_VERSION" != "${{ steps.get_version.outputs.version }}" ]; then
+            echo "Git tag version (v$TAG_VERSION) does not match pyproject.toml version (${{ steps.get_version.outputs.version }})"
+            exit 1
+          fi
+
+      - name: Set repository URL
+        id: repo-url
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            if [[ "${{ github.event.inputs.environment }}" == "testpypi" ]]; then
+              echo "url=https://test.pypi.org/legacy/" >> $GITHUB_OUTPUT
+            else
+              echo "url=https://upload.pypi.org/legacy/" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "url=https://upload.pypi.org/legacy/" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to PyPI / TestPyPI
+        uses: ./.github/actions/publish-to-pypi
+        with:
+          pypi-token: ${{ secrets.PYPI_API_TOKEN }}
+          repository-url: ${{ steps.repo-url.outputs.url }}
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: ./.github/actions/create-github-release
+        with:
+            tag_name: ${{ github.ref_name }}
+            release_title: "Release ${{ github.ref_name }}"
+            release_body: "Automatic release of version ${{ github.ref_name }}"

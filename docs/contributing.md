@@ -2,17 +2,14 @@
 
 Thank you for your interest in Ocean4DVarNet! This guide will show you how to contribute to the Ocean4DVarNet package.
 
----
-## Raise an issue
 
-If you encounter a bug or have a feature request, the first step is to let us know by raising an issue on GitHub using the following steps:
+These include general guidelines for contributions to Ocean4DVarNet, instructions on setting up a development environment, and guidelines on collaboration on GitHub, writing documentation, testing, and code style.
 
-1. Check the existing issues to avoid duplicates.
-2. If it’s a new issue, create a detailed bug report or feature request by filling in the issue template.
-3. Use clear, descriptive titles and provide as much relevant information as possible.
-4. If you have a bug, include the steps to reproduce it.
-5. If you have a feature request, describe the use case and expected behaviour.
-6. If you are interested in solving the issue yourself, assign the issue to yourself and follow the steps below.
+
+***Unit tests***
+
+Ocean4DVarNet include unit tests that can be executed locally using pytest. For more information on testing, please refer to the general Ocean4DVarNet [testing guidelines](./contributing/testing.md).
+
 
 ---
 ## Developing in Ocean4DVarNet
@@ -20,7 +17,7 @@ If you encounter a bug or have a feature request, the first step is to let us kn
 For contributing to the development of the Ocean4DVarNet packages, please follow these steps:
 
 1. Fork the Ocean4DVarNet repository on GitHub to your personal/organisation account. See the [GitHub tutorial](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
-2. Set up the development environment following the instructions in the [Development Set-up section](./development.md)
+2. Set up the development environment following the instructions in the [Development Set-up section](./developing.md)
 3. ).
 4. Create a new branch for your developments, following the [Branching Guidelines](./contributing/guidelines.md#branching-guidelines).
 5. Make your changes and ensure that your changes adhere to the [Development Guidelines](./contributing/guidelines.md#development-guidelines).

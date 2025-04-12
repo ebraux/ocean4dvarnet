@@ -1,23 +1,53 @@
-# 4DVarNet
+# Welcome to ocean4DVarNet documentation! 
 
-This software is a computer program whose purpose is to apply deep learning schemes to dynamical systems and ocean remote sensing data.
+***Warning: This documentation is a work in progress.***
+
+The full documentation of the package avalailable at : 
 
 ---
-## Package installation
+## About ocean4DVarNet
 
-- the package is hosted on test.pypi.org, and his dependencies on pypi.org
+**4DVarNet** (short for **4D-Variational Network**) is a deep learning-based framework that combines ideas from data assimilation (specifically **4D-Var**) with neural networks to reconstruct high-resolution spatiotemporal data from incomplete and noisy observations—commonly applied in **Earth sciences**, like oceanography and meteorology.
+
+
+
+---
+## Installing
+
+To install the package, you can use the following command:
 ``` bash
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ ocean4dvarnet
+pip install ocean4dvarnet
 ```
-- To install a specific version use for example `ocean4dvarnet==0.0.11`
 
-###  Package utilisation
+Get more information in the [installing](./installing.md) section.
+
+---
+##  Usage 
 ``` python
 import ocean4dvarnet
 ``` 
 
 
-Informations about this package development : [package-development](./package-development.md)
+---
+## Contributing
+
+``` bash
+git clone ...
+cd ocean4dvarnet
+pip install .[dev]
+```
+
+Get more information in the [contributing](./contributing.md) section.
+
+---
+## License
+
+...
+
+- Installation d'un environmment python
+	- [Installation basique](./basic_env.md)
+	- [Installation détaillée d'un environnement complet](./ocean-code_env.md)
+- Installation du package
 
 
 ---
@@ -29,6 +59,8 @@ Informations about this package development : [package-development](./package-de
 	- Fablet, R.; Chapron, B.; Drumetz, L.; Mmin, E.; Pannekoucke, O.; Rousseau, F. Learning Variational Data Assimilation Models and Solvers. Journal of Advances in Modeling Earth Systems n/a (n/a), e2021MS002572. https://doi.org/10.1029/2021MS002572.
 	- Fablet, R.; Beauchamp, M.; Drumetz, L.; Rousseau, F. Joint Interpolation and Representation Learning for Irregularly Sampled Satellite-Derived Geophysical Fields. Frontiers in Applied Mathematics and Statistics 2021, 7. https://doi.org/10.3389/fams.2021.655224.
 
+---
+## License
 
 Copyright IMT Atlantique/OceaniX, contributor(s) : M. Beauchamp, R. Fablet, Q. Febvre, D. Zhu (IMT Atlantique) 
 

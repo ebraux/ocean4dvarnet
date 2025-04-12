@@ -7,7 +7,7 @@ Python Version:
 We require at least Python 3.9.
 
 ---
-# Installation
+# Environment Installation
 
 We currently do not provide a conda build package of Ocean4DVarNet but only a pypi
 
@@ -24,6 +24,9 @@ Then the requirements must be installed in the environment :
 ``` bash
 mamba env update -f environment.yaml
 ```
+
+More informations about how to deploy a full environment can be found in the [Development Set-up section](./developing.md)
+
 
 ---
 ## Instructions
@@ -43,7 +46,7 @@ You can also get a zip or tgz archive of the package from github repository http
 pip install ocean4dvarnet-contrib-x.x.x.tar.gz
 ```
 
-And you can use the last development version direcly from github repository
+And you can use the last development version directly from github repository
 ``` bash
 pip install git+https://github.com/CIA-Oceanix/ocean4dvarnet.git
 ```

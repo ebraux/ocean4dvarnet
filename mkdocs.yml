@@ -28,15 +28,15 @@ nav:
   - Home: index.md
   - Installing: installing.md
   - Contributing: contributing.md
-  - Developing: developing.md
-  - API Reference:
-      - data: api/data.md
-      - evaluate: api/evaluate.md
-      - models: api/models.md
-      - plot: api/plot.md
-      - process: api/process.md
-      - train: api/train.md
-      - utils: api/utils.md
+  - Issues: issues.md
+  - Package Documentation:
+      - data: documentation/data.md
+      - evaluate: documentation/evaluate.md
+      - models: documentation/models.md
+      - plot: documentation/plot.md
+      - process: documentation/process.md
+      - train: documentation/train.md
+      - utils: documentation/utils.md
 
 
 markdown_extensions:

@@ -2,38 +2,12 @@
 
 ***Warning: This documentation is a work in progress.***
 
+The full documentation of the package avalailable at : 
+
 ---
 ## About ocean4DVarNet
 
 **4DVarNet** (short for **4D-Variational Network**) is a deep learning-based framework that combines ideas from data assimilation (specifically **4D-Var**) with neural networks to reconstruct high-resolution spatiotemporal data from incomplete and noisy observations—commonly applied in **Earth sciences**, like oceanography and meteorology.
-
-
-### **Core Concept**
-
-4DVarNet blends:
-- **4D-Variational data assimilation (4D-Var)**: A method used to optimally combine a numerical model with observations over a time window.
-- **Deep learning**: Neural networks learn to model complex dynamics and correct for model errors.
-  
-It learns to **reconstruct missing data** over both space and time (the "4D" stands for 3D space + time).
-
-
-### **How It Works**
-
-- It uses a neural network **within a variational optimization loop**.
-- Given **partial observations** (like satellite data), it:
-    1. Predicts the full state over time.
-    2. Minimizes a **loss function** that balances between:
-        - Staying close to the observations.
-        - Being consistent with a learned dynamical prior (the network).
-    3. Refines its predictions iteratively (like traditional 4D-Var).
-
-
-### Applications
-
-- **Oceanographic reconstructions** (e.g. Sea Surface Height fields).
-- **Climate modeling**.
-- **Atmospheric reanalysis**.
-- Any setting where data is sparse, noisy, and spatiotemporal.
 
 
 
@@ -46,6 +20,13 @@ pip install ocean4dvarnet
 ```
 
 Get more information in the [installing](./installing.md) section.
+
+---
+##  Usage 
+``` python
+import ocean4dvarnet
+``` 
+
 
 ---
 ## Contributing
@@ -61,12 +42,11 @@ Get more information in the [contributing](./contributing.md) section.
 ---
 ## License
 
-...
+Copyright IMT Atlantique/OceaniX, contributor(s) : M. Beauchamp, R. Fablet, Q. Febvre, D. Zhu (IMT Atlantique) 
 
-- Installation d'un environmment python
-    - [Installation basique](./basic_env.md)
-    - [Installation détaillée d'un environnement complet](./ocean-code_env.md)
-- Installation du package
+Contact person: ronan.fablet@imt-atlantique.fr.
+
+This software is a computer program whose purpose is to apply deep learning schemes to dynamical systems and ocean remote sensing data. This software is governed by the CeCILL-C license under French law and abiding by the rules of distribution of free software. You can use, modify and/ or redistribute the software under the terms of the CeCILL-C license as circulated by CEA, CNRS and INRIA at the following URL "http://www.cecill.info". As a counterpart to the access to the source code and rights to copy, modify and redistribute granted by the license, users are provided only with a limited warranty and the software's author, the holder of the economic rights, and the successive licensors have only limited liability. In this respect, the user's attention is drawn to the risks associated with loading, using, modifying and/or developing or reproducing the software by the user in light of its specific status of free software, that may mean that it is complicated to manipulate, and that also therefore means that it is reserved for developers and experienced professionals having in-depth computer knowledge. Users are therefore encouraged to load and test the software's suitability as regards their requirements in conditions enabling the security of their systems and/or data to be ensured and, more generally, to use and operate it in the same conditions as regards security. The fact that you are presently reading this means that you have had knowledge of the CeCILL-C license and that you accept its terms.
 
 
 

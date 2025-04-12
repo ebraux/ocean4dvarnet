@@ -32,8 +32,12 @@ jobs:
 
       - name: Extract version
         id: get_version
-        uses: ./.github/actions/extract-version
-
+        shell: bash
+        run: |
+          VERSION=$(python scripts/get_version.py)
+          echo "Version from pyproject.toml: $VERSION"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+ 
       - name: Build package
         uses: ./.github/actions/build-package
 

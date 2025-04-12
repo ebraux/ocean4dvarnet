@@ -1,9 +1,7 @@
----
-# This action extracts the version from  pyproject.toml
-inputs:
-  input_name:
-    description: "Description of the input"
-    required: false
+# This action extracts the version from pyproject.toml and sets it as an output
+name: "Extract version from pyproject.toml"
+description: "Extracts the version field from pyproject.toml and sets it as output"
+inputs: {}
 outputs:
   version:
     description: The version extracted
@@ -11,12 +9,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - shell: bash
-      run: |
-        VERSION=$(python -c "
-import tomllib
-with open('pyproject.toml', 'rb') as f:
-    print(tomllib.load(f)['project']['version'])
-        ")
-        echo "version=$VERSION" >> $GITHUB_OUTPUT
+    - id: extract_version
       shell: bash
+      run: bash ./extract_version.sh

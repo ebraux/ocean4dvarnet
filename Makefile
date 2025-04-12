@@ -1,15 +1,28 @@
 # Variables
-VERSION ?= $(error "Please provide the version with VERSION=1.2.3 (e.g., make release VERSION==1.2.3)")
+VERSION ?= $(error "Please provide the version with VERSION=1.2.3 (e.g., make release VERSION=1.2.3)")
+# The version to be released
+# This is the version that will be used in the release process
 TAG = v$(VERSION)
 PYPROJECT = pyproject.toml
 
 # Location of the version bump script
 BUMP_SCRIPT = scripts/bump_version.py
 
-.PHONY: bump commit tag push release check
+# Regular expression for semantic versioning (MAJOR.MINOR.PATCH)
+SEMVER_REGEX = ^[0-9]+\.[0-9]+\.[0-9]+$$
+
+.PHONY: bump commit tag push release check validate_version
+
+## Validate semantic versioning (MAJOR.MINOR.PATCH)
+validate_version:
+	@echo "🔍 Validating version format: $(VERSION)"
+	@if ! echo "$(VERSION)" | grep -Eq "$(SEMVER_REGEX)"; then \
+		echo "❌ Invalid version format: '$(VERSION)' — expected format: MAJOR.MINOR.PATCH (e.g., 1.2.3)"; \
+		exit 1; \
+	fi
 
 ## Update pyproject.toml version
-bump:
+bump: validate_version
 	@echo "Updating $(PYPROJECT) to version $(VERSION)"
 	python $(BUMP_SCRIPT) v$(VERSION)
 
@@ -35,4 +48,3 @@ check:
 ## Run full release workflow: bump, check, commit, tag, push
 release: bump check commit tag push
 	@echo "Release v$(VERSION) completed."
-

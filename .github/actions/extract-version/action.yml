@@ -11,4 +11,4 @@ runs:
   steps:
     - id: extract_version
       shell: bash
-      run: bash ./extract_version.sh
+      run: ./extract_version.sh

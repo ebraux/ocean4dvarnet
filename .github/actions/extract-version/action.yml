@@ -12,6 +12,7 @@ runs:
 
     - name: Print current directory
       run: pwd
+      shell: bash
 
     - id: extract_version
       shell: bash

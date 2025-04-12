@@ -1,13 +1,18 @@
-name: Extract version from pyproject.toml
-description: Reads the version from pyproject.toml
-inputs: {}
+---
+# This action extracts the version from  pyproject.toml
+inputs:
+  input_name:
+    description: "Description of the input"
+    required: false
 outputs:
   version:
     description: The version extracted
+    value: ${{ steps.extract_version.outputs.version }}
 runs:
   using: "composite"
   steps:
-    - run: |
+    - shell: bash
+      run: |
         VERSION=$(python -c "
 import tomllib
 with open('pyproject.toml', 'rb') as f:

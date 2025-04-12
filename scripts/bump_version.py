@@ -1,3 +1,8 @@
+"""
+This script updates the version number in the pyproject.toml file.
+Usage: bump_version.py vX.Y.Z
+"""
+
 import sys
 import tomllib
 import tomli_w

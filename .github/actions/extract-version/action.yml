@@ -9,6 +9,10 @@ outputs:
 runs:
   using: "composite"
   steps:
+
+    - name: Print current directory
+      run: pwd
+
     - id: extract_version
       shell: bash
       run: ./extract_version.sh

@@ -17,6 +17,15 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.urls]
+Homepage = "https://ebraux.github.io/ocean4dvarnet/"
+Documentation = "https://ebraux.github.io/ocean4dvarnet/"
+Repository = "https://github.com/ebraux/ocean4dvarnet"
+Issues = "https://github.com/ebraux/ocean4dvarnet/issues"
+#Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+# 
+
 [project.optional-dependencies]
 dev = [
     "pylint",

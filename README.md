@@ -2,14 +2,12 @@
 
 ***Warning: This documentation is a work in progress.***
 
-The full documentation of the package avalailable at : 
+The full documentation of the package avalailable at : [https://ebraux.github.io/ocean4dvarnet/](https://ebraux.github.io/ocean4dvarnet/)
 
 ---
 ## About ocean4DVarNet
 
 **4DVarNet** (short for **4D-Variational Network**) is a deep learning-based framework that combines ideas from data assimilation (specifically **4D-Var**) with neural networks to reconstruct high-resolution spatiotemporal data from incomplete and noisy observations—commonly applied in **Earth sciences**, like oceanography and meteorology.
-
-
 
 ---
 ## Installing
@@ -22,11 +20,11 @@ pip install ocean4dvarnet
 Get more information in the [installing](./installing.md) section.
 
 ---
-##  Usage 
+## Usage 
+
 ``` python
 import ocean4dvarnet
 ``` 
-
 
 ---
 ## Contributing
@@ -38,17 +36,6 @@ pip install .[dev]
 ```
 
 Get more information in the [contributing](./contributing.md) section.
-
----
-## License
-
-...
-
-- Installation d'un environmment python
-	- [Installation basique](./basic_env.md)
-	- [Installation détaillée d'un environnement complet](./ocean-code_env.md)
-- Installation du package
-
 
 ---
 ## Useful links

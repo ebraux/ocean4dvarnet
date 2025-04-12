@@ -1,6 +1,6 @@
 site_name: Ocean4DVarNet Documentation
-site_url: https://yourdomain.com
-repo_url: https://github.com/yourrepo/ocean4dvarnet
+site_url: https://ebraux.github.io/ocean4dvarnet/
+repo_url: https://github.com/ebraux/ocean4dvarnet
 edit_uri: ""
 
 theme:

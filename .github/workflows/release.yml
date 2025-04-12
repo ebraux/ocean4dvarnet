@@ -1,16 +1,16 @@
 name: Release Package
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: Where to publish (pypi / testpypi)
-        required: true
-        default: pypi
-        type: choice
-        options:
-          - pypi
-          - testpypi
+#   workflow_dispatch:
+#     inputs:
+#       environment:
+#         description: Where to publish (pypi / testpypi)
+#         required: true
+#         default: pypi
+#         type: choice
+#         options:
+#           - pypi
+#           - testpypi
 
   push:
     tags:
@@ -60,7 +60,8 @@ jobs:
         uses: ./.github/actions/publish-to-pypi
         with:
           pypi-token: ${{ secrets.PYPI_API_TOKEN }}
-          repository-url: ${{ steps.repo-url.outputs.url }}
+          #repository-url: ${{ steps.repo-url.outputs.url }}
+          repository-url: https://test.pypi.org/legacy/
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')

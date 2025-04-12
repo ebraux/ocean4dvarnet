@@ -23,9 +23,6 @@ jobs:
 
     steps:
     
-      - name: Setup GitHub CLI
-        uses: cli/gh-action@v2
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'

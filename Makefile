@@ -1,5 +1,5 @@
 # Variables
-VERSION ?= $(error "Please provide the version with v=1.2.3 (e.g., make release v=1.2.3)")
+VERSION ?= $(error "Please provide the version with VERSION=1.2.3 (e.g., make release VERSION==1.2.3)")
 TAG = v$(VERSION)
 PYPROJECT = pyproject.toml
 
@@ -35,3 +35,4 @@ check:
 ## Run full release workflow: bump, check, commit, tag, push
 release: bump check commit tag push
 	@echo "Release v$(VERSION) completed."
+

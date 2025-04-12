@@ -3,13 +3,7 @@
 
 
 
-Thank you for your interest in Ocean4DVarNet ! Please follow the general Ocean4DVarNet [contributing guidelines](./contributing/index.md).
 
-These include general guidelines for contributions to Ocean4DVarNet, instructions on setting up a development environment, and guidelines on collaboration on GitHub, writing documentation, testing, and code style.
-
-***Unit tests***
-
-Ocean4DVarNet include unit tests that can be executed locally using pytest. For more information on testing, please refer to the general Ocean4DVarNet [testing guidelines](./contributing/testing.md).
 
 To create a development environment follow the steps outlined below.
 

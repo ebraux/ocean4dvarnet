@@ -46,6 +46,7 @@ dev = [
     "pytest-cov",
     "tox",
     "tomli",
+    "tomli-w",
     "flake8",
     "black",
     "isort",

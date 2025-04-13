@@ -1,7 +1,8 @@
 site_name: Ocean4DVarNet Documentation
 site_url: https://ebraux.github.io/ocean4dvarnet/
 repo_url: https://github.com/ebraux/ocean4dvarnet
-edit_uri: ""
+#edit_uri: ""
+copyright: "Copyright &copy; IMT Atlantique/OceaniX. This software is governed by the CeCILL-C license under French law and abiding by the rules of distribution of free software."
 
 theme:
   name: material
@@ -11,14 +12,15 @@ theme:
     - content.code.annotate
     - search.suggest
     - search.highlight
+    - navigation.footer
 
 plugins:
   - search
-  #- dotenv
+  - autorefs
   - mkdocstrings:
       handlers:
         python:
-          paths: ["contrib", "."]
+          paths: ["ocean4dvarnet", "."]
           options:
             show_source: true
             docstring_style: google
@@ -29,14 +31,20 @@ nav:
   - Installing: installing.md
   - Contributing: contributing.md
   - Issues: issues.md
+  - Developing:
+      - Developing: developing/index.md
+      - Guidelines: developing/guidelines.md
+      - Fork repository: developing/fork.md
+      - Python Environment: developing/environment.md
+      - Testing: developing/testing.md
   - Package Documentation:
-      - data: documentation/data.md
-      - evaluate: documentation/evaluate.md
-      - models: documentation/models.md
-      - plot: documentation/plot.md
-      - process: documentation/process.md
-      - train: documentation/train.md
-      - utils: documentation/utils.md
+      - data: pkg-doc/data.md
+      - evaluate: pkg-doc/evaluate.md
+      - models: pkg-doc/models.md
+      - plot: pkg-doc/plot.md
+      - process: pkg-doc/process.md
+      - train: pkg-doc/train.md
+      - utils: pkg-doc/utils.md
 
 
 markdown_extensions:

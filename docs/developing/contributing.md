@@ -17,13 +17,12 @@ Ocean4DVarNet include unit tests that can be executed locally using pytest. For 
 For contributing to the development of the Ocean4DVarNet packages, please follow these steps:
 
 1. Fork the Ocean4DVarNet repository on GitHub to your personal/organisation account. See the [GitHub tutorial](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
-2. Set up the development environment following the instructions in the [Development Set-up section](./developing.md)
-3. ).
-4. Create a new branch for your developments, following the [Branching Guidelines](./contributing/guidelines.md#branching-guidelines).
-5. Make your changes and ensure that your changes adhere to the [Development Guidelines](./contributing/guidelines.md#development-guidelines).
+2. Set up the development environment following the instructions in the [Development Set-up section](./developing.md).
+3. Create a new branch for your developments, following the [Branching Guidelines](./developing/guidelines.md#branching-guidelines).
+5. Make your changes and ensure that your changes adhere to the [Development Guidelines](./developing/guidelines.md#development-guidelines).
 6. Commit your changes and push your branch to your fork on GitHub.
-7. Open a Pull Request against the main branch of the original repository, set a PR title according to the [PR Title Guidelines](./contributing/guidelines.md#pr-title-guidelines) and fill in the Pull Request template.
-8. Request a review from maintainers or other contributors, which will follow the [Code Review Process](./contributing/contributing.md#code-review-process).
+7. Open a Pull Request against the main branch of the original repository, set a PR title according to the [PR Title Guidelines](./developing/guidelines.md#pr-title-guidelines) and fill in the Pull Request template.
+8. Request a review from maintainers or other contributors, which will follow the [Code Review Process](./contributing.md#code-review-process).
 
 
 ---

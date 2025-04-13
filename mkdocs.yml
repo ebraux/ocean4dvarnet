@@ -29,7 +29,16 @@ plugins:
 nav:
   - Home: index.md
   - Installing: installing.md
-  - Contributing: contributing.md
+  # - User Guide:
+  #     - User Guide: user-guide/index.md
+  #     - Quickstart: user-guide/quickstart.md
+  #     - Examples: user-guide/examples.md
+  #     - Configuration: user-guide/configuration.md
+  #     - Data: user-guide/data.md
+  #     - Preprocessing: user-guide/preprocessing.md
+  #     - Training: user-guide/training.md
+  #     - Evaluation: user-guide/evaluation.md
+  #     - Inference: user-guide/inference.md  
   - Issues: issues.md
   - Developing:
       - Developing: developing/index.md

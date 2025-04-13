@@ -41,7 +41,9 @@ dev = [
 doc = [
     "mkdocs",
     "mkdocs-material",
-    "mkdocstrings[python]",
+    "mkdocstrings",
+    "mkdocstrings-python",
+    #"mkdocstrings[python]",
 ]
 
 [build-system]

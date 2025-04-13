@@ -11,7 +11,7 @@ BUMP_SCRIPT = scripts/bump_version.py
 # Regular expression for semantic versioning (MAJOR.MINOR.PATCH)
 SEMVER_REGEX = ^[0-9]+\.[0-9]+\.[0-9]+$$
 
-.PHONY: bump commit tag push release check validate_version
+.PHONY: bump commit tag push release check validate_version lint test quality
 
 ## Validate semantic versioning (MAJOR.MINOR.PATCH)
 validate_version:
@@ -44,6 +44,20 @@ push:
 check:
 	@echo "🔍 Checking version in $(PYPROJECT)"
 	@grep '^version =' $(PYPROJECT)
+
+## Run code quality checks with pylint
+lint:
+	@echo "Running pylint for code quality checks..."
+	@pylint ocean4dvarnet
+
+## Run unit tests with pytest
+test:
+	@echo "Running tests with pytest..."
+	@pytest
+
+## Run both lint and test
+quality: lint test
+	@echo "Code quality and tests completed successfully."
 
 ## Run full release workflow: bump, check, commit, tag, push
 release: bump check commit tag push
